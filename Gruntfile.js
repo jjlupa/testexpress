@@ -3,8 +3,19 @@ module.exports = function (grunt) {
     grunt.initConfig({
         nodemon: {
           dev: {
-            script: 'index.js'
+            script: 'server.js'
           }
-        }
+        },
+	forever: {
+	    server: {
+		options: {
+		    index: 'server.js',
+		    logDir: 'logs',
+		    errFile: 'err',
+		    outFile: 'out',
+		    logFile: 'log'
+		}
+	    }
+	}
       });
 };
